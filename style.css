@@ -1,9 +1,9 @@
 #posts {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .index .post {
-  float: unset;
+    float: unset;
 }
 
 
@@ -32,4 +32,8 @@ body {
 
 ::-webkit-scrollbar-track {
   background: #000; 
+}
+
+.post_text {
+    background-color: transparent !important;
 }
