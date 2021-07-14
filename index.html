@@ -190,7 +190,6 @@ function handleThis(formElm){window.location="/tagged/"+formElm.q.value+"";retur
 {block:IfNotNavBarOpenByDefault}navDefault = false;{/block:IfNotNavBarOpenByDefault}
 </script>
 
-
 <!-- SYNDEX THEME APPEARANCE OPTIONS -->
 <style type="text/css">
 body, html {
@@ -664,7 +663,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 
 <div id="posts">
-<div id="background"></div>
+<div id="background">
+    <button onclick="myFunction()" style="border: unset; background: unset; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; position: absolute; left: 0; cursor: pointer; padding: 10px 0 0 10px;">blck</button>
+</div>
 
 {block:Posts}
 {block:IndexPage}
@@ -855,10 +856,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 {block:NextPost}<a href="{NextPost}" class="next next_table" title="{lang:Next post}"><span class="next_cell">▶</span></a>{/block:NextPost}
 {/block:PermalinkPagination}
 {/block:PermalinkPage}
-<script type="text/javascript">
-	x = 0; //horizontal coord
-	y = document.body.scrollHeight; //vertical coord
-	window.scroll(x, y);
+
+<script>
+function myFunction() {
+  let idBackgroundColor = document.getElementById("background");
+  
+  idBackgroundColor.style.setProperty("background", "black", "important");
+}
 </script>
 </body>
 </html>

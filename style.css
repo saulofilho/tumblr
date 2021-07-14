@@ -1,39 +1,70 @@
 #posts {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .index .post {
-    float: unset;
+  float: unset;
 }
 
 
 * {
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-overflow-scrolling: touch;
-  text-rendering: optimizeLegibility;
+margin: 0;
+padding: 0;
+outline: 0;
+box-sizing: border-box;
+scroll-behavior: smooth;
+-moz-osx-font-smoothing: grayscale;
+-webkit-overflow-scrolling: touch;
+text-rendering: optimizeLegibility;
 }
 
 body {
-  -webkit-font-smoothing: antialiased;
+-webkit-font-smoothing: antialiased;
 }
 
 ::-webkit-scrollbar {
-  width: 1rem;
+width: 1rem;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ff00e6;
+background-color: #ff00e6;
 }
 
 ::-webkit-scrollbar-track {
-  background: #000; 
+background: #000; 
 }
 
 .post_text {
-    background-color: transparent !important;
+  background-color: transparent !important;
+}
+
+#background {
+  background: linear-gradient(40deg, #ff00b2, #00b9ff, #e3ff00, #ff8900) !important;
+  background-size: 100% !important;
+
+  -webkit-animation: tumblr 30s ease infinite !important;
+  -moz-animation: tumblr 30s ease infinite !important;
+  -o-animation: tumblr 30s ease infinite !important;
+  animation: tumblr 30s ease infinite !important;
+}
+
+@-webkit-keyframes tumblr {
+  0%{background-position:0% 79% !important}
+  50%{background-position:100% 22% !important}
+  100%{background-position:0% 79% !important}
+}
+@-moz-keyframes tumblr {
+  0%{background-position:0% 79% !important}
+  50%{background-position:100% 22% !important}
+  100%{background-position:0% 79% !important}
+}
+@-o-keyframes tumblr {
+  0%{background-position:0% 79% !important}
+  50%{background-position:100% 22% !important}
+  100%{background-position:0% 79% !important}
+}
+@keyframes tumblr {
+  0%{background-position:0% 79% !important}
+  50%{background-position:100% 22% !important}
+  100%{background-position:0% 79% !important}
 }
