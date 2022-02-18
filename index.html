@@ -663,9 +663,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 
 <div id="posts">
-<div id="background">
-    <button onclick="myFunction()" style="border: unset; background: unset; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; position: absolute; left: 0; cursor: pointer; padding: 10px 0 0 10px;">blck</button>
+<div>
+	<button class="btn-toggle" style="border: unset; background: unset; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; position: absolute; left: 0; cursor: pointer; padding: 10px 0 0 10px;">
+		↻
+	</button>
 </div>
+<!-- <div id="background">
+	<button class="btn-toggle" style="border: unset; background: unset; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; position: absolute; left: 0; cursor: pointer; padding: 10px 0 0 10px;">
+		<strong>blck</strong>
+	</button>
+</div> -->
 
 {block:Posts}
 {block:IndexPage}
@@ -793,7 +800,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 {/block:Quote}
 
 
-{block:Text}<div class="post type_text" id="post-{PostID}"><div class="post_margin_adjustment"><div class="post_relative"><div class="post_options"><div title="Reblog, Like, {lang:Source} and {lang:Tags}" class="post_options_more_info">+</div><div class="post_options_reblog">{ReblogButton color="black" size="18"}</div><div class="type_like post_options_like">{LikeButton color="black" size="18"}</div><a href="{Permalink}" class="post_options_permalink"></a></div><div class="post_info_overlay"><div class="post_info_overlay_absolute"><div class="post_info_overlay_table"><div class="post_info_overlay_cell"><div class="post_info_overlay_tags"><div class="post_info_overlay_tags_inline_nest"><a class="post_info_overlay_button" href="{Permalink}">Permalink {block:NoteCount}({NoteCountWithLabel}){/block:NoteCount}</a>{block:ContentSource}<a class="post_info_overlay_button" href="{SourceURL}">Source: {SourceTitle}</a>{/block:ContentSource}{block:RebloggedFrom}<a class="post_info_overlay_button" href="{ReblogParentURL}">Via: {ReblogParentName}</a>{/block:RebloggedFrom}{block:HasTags}{block:Tags}<a href="{TagURL}"><div class="post_info_overlay_button">{Tag}</div></a>{/block:Tags}{/block:HasTags}</div></div></div></div></div><div class="rounded post_info_overlay_background"></div></div><div class="post_text"><div class="post_text_table_cell"><div class="post_text_body title_text"><a href="{Permalink}">{block:Title}{Title}{/block:Title}</a></div></div></div></div></div></div>
+{block:Text}
+<div class="post type_text" id="post-{PostID}">
+	{Body}
+</div>
 {/block:Text}
 
 {block:Video}
@@ -857,12 +867,53 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 {/block:PermalinkPagination}
 {/block:PermalinkPage}
 
-<script>
+<!-- <script>
 function myFunction() {
   let idBackgroundColor = document.getElementById("background");
   
   idBackgroundColor.style.setProperty("background", "black", "important");
 }
+</script> -->
+<script>
+const btn = document.querySelector(".btn-toggle");
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+const currentTheme = localStorage.getItem("theme");
+if (currentTheme == "dark") {
+  document.body.classList.toggle("dark-theme");
+} else if (currentTheme == "light") {
+  document.body.classList.toggle("light-theme");
+}
+
+btn.addEventListener("click", function () {
+  if (prefersDarkScheme.matches) {
+    document.body.classList.toggle("light-theme");
+    let theme = document.body.classList.contains("light-theme")
+      ? "light"
+      : "dark";
+  } else {
+    document.body.classList.toggle("dark-theme");
+    let theme = document.body.classList.contains("dark-theme")
+      ? "dark"
+      : "light";
+  }
+  localStorage.setItem("theme", theme);
+});
+
+let div = document.getElementById("icon");
+let icon = div.innerText;
+btn.addEventListener("click", function () {
+  if (this.innerText == icon) {
+    div.innerText = "nightlight";
+    div.classList.add("md-dark");
+    div.classList.remove("md-light");
+  }
+  else {
+    div.innerText = icon;
+    div.classList.add("md-light");
+    div.classList.remove("md-dark");
+  }
+}, false);
 </script>
 </body>
 </html>
