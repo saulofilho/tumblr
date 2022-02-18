@@ -67,10 +67,11 @@ body {
 } */
 /* DARK MODE */
 .btn-toggle {
-  background: transparent;
-  border: unset;
-  cursor: pointer;
-  font-size: 30px;
+  background: transparent !important;
+  border: unset !important;
+  cursor: pointer !important;
+  font-size: 30px !important;
+  position: fixed !important;
 }
 body {
   --bkg-color: #fff;
