@@ -16,10 +16,10 @@ body {
   width: 1rem;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #ff00e6;
+  background-color: #f9c4ff;
 }
 ::-webkit-scrollbar-track {
-  background: #000; 
+  background: var(--bkg-color); 
 }
 .post_text {
   background-color: transparent !important;
@@ -72,16 +72,17 @@ body {
   cursor: pointer !important;
   font-size: 30px !important;
   position: fixed !important;
+  color: #f9c4ff;
 }
 body {
   --bkg-color: #fff;
 }
 body.dark-theme {
-  --bkg-color: #2f2f2f;
+  --bkg-color: #131313;
 }
 @media (prefers-color-scheme: dark) {
   body {
-    --bkg-color: #2f2f2f;
+    --bkg-color: #131313;
   }
   body.light-theme {
     --bkg-color: #fff;
