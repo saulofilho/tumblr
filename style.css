@@ -36,35 +36,6 @@ body {
 .post.type_text.loaded p {
   display: none !important;
 }
-/* #background {
-  background: linear-gradient(40deg, #ff00b2, #00b9ff, #e3ff00, #ff8900) !important;
-  background-size: 100% !important;
-
-  -webkit-animation: tumblr 30s ease infinite !important;
-  -moz-animation: tumblr 30s ease infinite !important;
-  -o-animation: tumblr 30s ease infinite !important;
-  animation: tumblr 30s ease infinite !important;
-}
-@-webkit-keyframes tumblr {
-  0%{background-position:0% 79% !important}
-  50%{background-position:100% 22% !important}
-  100%{background-position:0% 79% !important}
-}
-@-moz-keyframes tumblr {
-  0%{background-position:0% 79% !important}
-  50%{background-position:100% 22% !important}
-  100%{background-position:0% 79% !important}
-}
-@-o-keyframes tumblr {
-  0%{background-position:0% 79% !important}
-  50%{background-position:100% 22% !important}
-  100%{background-position:0% 79% !important}
-}
-@keyframes tumblr {
-  0%{background-position:0% 79% !important}
-  50%{background-position:100% 22% !important}
-  100%{background-position:0% 79% !important}
-} */
 /* DARK MODE */
 .btn-toggle {
   background: transparent !important;
